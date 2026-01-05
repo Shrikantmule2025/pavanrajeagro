@@ -1,0 +1,19 @@
+{% extends "common/base.html" %}
+
+{% block content %}
+<h1>
+{% if session['lang'] == 'mr' %}
+    पवनराजे अ‍ॅग्रो मध्ये आपले स्वागत आहे
+{% else %}
+    Welcome to Pavanraje Agro
+{% endif %}
+</h1>
+
+<p>
+{% if session['lang'] == 'mr' %}
+    आम्ही उच्च दर्जाचे बियाणे उत्पादन व पुरवठा करणारी कंपनी आहोत.
+{% else %}
+    We are a quality seed production and supply company.
+{% endif %}
+</p>
+{% endblock %}

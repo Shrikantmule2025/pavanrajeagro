@@ -1,0 +1,16 @@
+{% extends "common/base.html" %}
+
+{% block content %}
+<h2>Attendance</h2>
+
+{% if success %}
+<p style="color:green;">Attendance Marked Successfully</p>
+{% endif %}
+
+<form method="post">
+    <button type="submit">Day Start Attendance</button>
+</form>
+
+<br>
+<a href="/employee_logout">Logout</a>
+{% endblock %}

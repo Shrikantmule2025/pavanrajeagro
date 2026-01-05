@@ -1,0 +1,25 @@
+{% extends "common/base.html" %}
+{% block content %}
+
+<div class="card">
+<h3><i class="fa-solid fa-pen"></i> Day End Attendance</h3>
+
+<form method="post" enctype="multipart/form-data">
+
+    <label>
+        <i class="fa-solid fa-camera"></i> End Photo
+    </label>
+    <input type="file" name="photo" accept="image/*" capture="camera" required>
+
+    <label>
+        <i class="fa-solid fa-list"></i> Work Description
+    </label>
+    <textarea name="work_desc" required></textarea>
+
+    <button type="submit">
+        <i class="fa-solid fa-check-double"></i> Submit Day End
+    </button>
+</form>
+</div>
+
+{% endblock %}

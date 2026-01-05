@@ -1,0 +1,48 @@
+{% extends "common/base.html" %}
+{% block content %}
+
+<h3>📊 Attendance Report</h3>
+
+<div style="overflow-x:auto;">
+<table border="1" width="100%" cellpadding="6" cellspacing="0">
+    <tr style="background:#e8f5e9;font-weight:bold;">
+        <td>Employee</td>
+        <td>Date</td>
+        <td>Start</td>
+        <td>End</td>
+        <td>Work</td>
+        <td>Location</td>
+        <td>Photos</td>
+    </tr>
+
+    {% for r in rows %}
+    <tr>
+        <td>{{ r[0] }}</td>
+        <td>{{ r[1] }}</td>
+        <td>{{ r[2] or "-" }}</td>
+        <td>{{ r[3] or "-" }}</td>
+        <td>{{ r[4] or "-" }}</td>
+        <td>
+            {% if r[5] and r[6] %}
+                {{ r[5] }}, {{ r[6] }}
+            {% else %}
+                -
+            {% endif %}
+        </td>
+        <td>
+            {% if r[7] %}
+                <a href="/uploads/attendance_photos/{{ r[7] }}" target="_blank">Start</a>
+            {% endif %}
+            {% if r[8] %}
+                | <a href="/uploads/attendance_photos/{{ r[8] }}" target="_blank">End</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+<br>
+<a href="/admin_logout">Logout</a>
+
+{% endblock %}
